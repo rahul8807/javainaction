@@ -2,7 +2,7 @@
 
 ### JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
 
-### Junit Platform
+### Junit Platform  (@RunWith(JUnitPlatform.class))
 foundation for launching testing frameworks on the JVM.
 
 ### Test Fixture
