@@ -1,6 +1,10 @@
 plugins {
     id 'java'
+    id 'jacoco' //By default, a HTML report is generated at $buildDir/reports/jacoco/test
 }
+
+//alternative way to add plugins
+//apply plugin: 'jacoco'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -16,10 +20,53 @@ dependencies {
     testImplementation 'org.junit.platform:junit-platform-commons:1.5.2'
 }
 
+
+/** JACOCO Start **/
+jacoco { //The JaCoCo plugin adds a project extension named jacoco of type JacocoPluginExtension, which allows configuring defaults for JaCoCo usage in your build.
+    toolVersion = "0.8.7"
+    //reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport { //JaCoCo Report configuration
+    dependsOn test
+    //dependsOn jacocoTestCoverageVerification
+    reports {
+        xml.enabled true
+        csv.enabled true
+        html.enabled true
+    }
+}
+
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.0
+            }
+        }
+
+        rule {
+            enabled = true
+            element = 'CLASS'
+            includes = ['junit.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.5
+            }
+        }
+    }
+}
+/** JACOCO End **/
+
 test {
     useJUnitPlatform()
 
     testLogging {
         events("passed", "skipped", "failed")
     }
+
+    finalizedBy jacocoTestReport // report is always generated after tests run
 }
