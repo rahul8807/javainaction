@@ -2,10 +2,10 @@
 
 ###JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
 
-###Junit Platform
+### Junit Platform
 foundation for launching testing frameworks on the JVM.
 
-###Test Fixture
+### Test Fixture
 When there are multiple test cases in a JUnit class, there could be a common object or objects used by all the test cases.
 A **test fixture** is an environment used to consistently test.
 A **software test fixture** sets up a system for the software testing **process by initializing it**, thereby satisfying any preconditions the system may have.
@@ -15,7 +15,7 @@ A **software test fixture** sets up a system for the software testing **process 
 
 
 
-###@TestInstance
+### @TestInstance
 By default, both JUnit 4 and 5 create a **new instance** of the test class before running each test method.
 @TestInstance is a **type-level** annotation
 used to configure the **lifecycle** of test instances
