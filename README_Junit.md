@@ -1,6 +1,6 @@
 # Junit
 
-###JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
+### JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage
 
 ### Junit Platform
 foundation for launching testing frameworks on the JVM.
@@ -9,8 +9,8 @@ foundation for launching testing frameworks on the JVM.
 When there are multiple test cases in a JUnit class, there could be a common object or objects used by all the test cases.
 A **test fixture** is an environment used to consistently test.
 A **software test fixture** sets up a system for the software testing **process by initializing it**, thereby satisfying any preconditions the system may have.
-####@BeforeClass - Junit 4, is used on a static function, to work with static members of the class.
-####@BeforeAll - Junit5, can be used both on static and instance method 
+#### @BeforeClass - Junit 4, is used on a static function, to work with static members of the class.
+#### @BeforeAll - Junit5, can be used both on static and instance method 
 
 
 
